@@ -1,0 +1,2 @@
+framework,max_new_tokens,mean_new_tokens,mean_time_s,mean_tokps,model,p50_new_tokens,p50_time_s,p50_tokps,p95_time_s,p95_tokps,runs,throughput_scope
+Transformers,64,64.0,1.6839931011199951,38.00527532415397,openai/gpt-oss-20b,64,1.6831629276275635,38.023651156699785,1.6933348178863525,38.16317435864409,5,prefill+decode

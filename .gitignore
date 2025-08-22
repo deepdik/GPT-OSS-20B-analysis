@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+*.log
+new_results/**/*.json
+new_results/**/*.log
+*.ipynb_checkpoints
+/.idea
+/.vscode
+*.egg-info/
+

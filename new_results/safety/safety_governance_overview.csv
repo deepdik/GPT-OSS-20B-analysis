@@ -1,0 +1,4 @@
+id,name,organization,license,license_class,usage_policy,governance,release_date,model_card,sources.license,sources.usage_policy,sources.model_card,sources.governance
+gpt-oss-20b,GPT-OSS-20B,Community/OSS,TBD,Unknown,TBD,TBD,2024,,,,,
+qwen3-32b,Qwen3-32B,Alibaba,TBD,Restricted,TBD,Alibaba governance (to-verify),2024,https://huggingface.co/Qwen/Qwen3-32B,,,https://huggingface.co/Qwen/Qwen3-32B,
+yi-34b,Yi-34B,01.AI,TBD,Restricted,TBD,01.AI governance (to-verify),2024,https://huggingface.co/01-ai/Yi-34B,,,https://huggingface.co/01-ai/Yi-34B,

@@ -1,0 +1,4 @@
+error,max_new_tokens,mean_new_tokens,mean_time_s,mean_tokps,model,p50_new_tokens,p50_time_s,p50_tokps,p95_time_s,p95_tokps,precision,runs,throughput_scope
+,64,64.0,1.6598886966705322,38.55743765818467,openai/gpt-oss-20b,64,1.6555593013763428,38.65763065496588,1.6694352626800537,38.713259313859176,BF16,5,prefill+decode
+expected scalar type BFloat16 but found Half,64,,,,openai/gpt-oss-20b,,,,,,FP16,,
+expected scalar type BFloat16 but found Float,64,,,,openai/gpt-oss-20b,,,,,,FP32,,
