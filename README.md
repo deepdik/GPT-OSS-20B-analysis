@@ -1,6 +1,6 @@
-# ServeBench: Deployment-centric Survey of gpt-oss-20B on 1× H100
+# GPT-OSS-20B: A Comprehensive Deployment-Centric Analysis of OpenAI's Open-Weight Mixture of Experts Model
 
-This repository contains a tight, reproducible deployment-centric survey of `gpt-oss-20b` on a single NVIDIA H100 GPU, with fair comparisons to 20–40B open-weight peers. It is designed for turnkey reproduction and arXiv-readiness (cs.CL / cs.LG).
+This repository contains a comprehensive deployment-centric analysis of `gpt-oss-20b` on a single NVIDIA H100 GPU, with fair comparisons to 20–40B open-weight peers. It is designed for turnkey reproduction and arXiv-readiness (cs.CL / cs.LG).
 
 ## Contributions
 - (i) Deployment-centric survey of `gpt-oss-20b` vs 20–40B open-weights
@@ -12,7 +12,7 @@ This repository contains a tight, reproducible deployment-centric survey of `gpt
 ## Repository structure
 ```
 env/          # environment setup and lock files
-scripts/      # load generators, helpers, evaluation scripts
+scripts/      # benchmarking scripts and analysis tools
 data/         # small prompt/task stubs, curated safety prompts
 new_results/  # working area (raw per-run outputs + unified CSVs)
   ├─ latency/               # per-model latency CSVs
@@ -25,7 +25,6 @@ new_results/  # working area (raw per-run outputs + unified CSVs)
   ├─ unified_latency_comparison.csv
   ├─ unified_memory_comparison_fixed.csv
   └─ unified_energy_comparison_fixed.csv
-results/      # final consolidated tables (created by scripts) + APE
 figs/         # generated plots for latency/KV/APE
 paper/        # LaTeX for arXiv (assembled at the end)
 ```
@@ -72,7 +71,7 @@ source .venv/bin/activate
 
 ## Reproducing the study (end-to-end)
 
-Below commands regenerate the core results for the three models on a single GPU. Outputs are written under `new_results/` and consolidated to `results/`.
+Below commands regenerate the core results for the three models on a single GPU. Outputs are written under `new_results/`.
 
 Models used:
 - GPT-OSS-20B: `openai/gpt-oss-20b`
@@ -173,18 +172,14 @@ python scripts/energy_analysis_simple.py \
 
 ```bash
 python scripts/create_unified_from_new_results.py
-# Writes to results/: unified_latency_comparison.csv, unified_memory_comparison_fixed.csv, unified_energy_comparison_fixed.csv
-# Optionally mirror into new_results/ for single-folder workflows:
-cp results/unified_* new_results/
+# Creates unified CSVs in new_results/: unified_latency_comparison.csv, unified_memory_comparison_fixed.csv, unified_energy_comparison_fixed.csv
 ```
 
 ### 5) APE (Active Parameter Efficiency)
 
 ```bash
 python scripts/ape_analysis.py
-# Writes: results/ape_analysis.csv and results/ape_analysis.json
-# Optionally mirror into new_results/ape/
-mkdir -p new_results/ape && cp results/ape_analysis.* new_results/ape/
+# Writes: new_results/ape/ape_analysis.csv and new_results/ape/ape_analysis.json
 ```
 
 ### 6) Ablation studies (optional)
