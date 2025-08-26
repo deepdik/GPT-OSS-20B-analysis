@@ -2,6 +2,8 @@
 
 This repository contains a comprehensive deployment-centric analysis of `gpt-oss-20b` on a single NVIDIA H100 GPU, with fair comparisons to 20–40B open-weight peers. It is designed for turnkey reproduction and arXiv-readiness (cs.CL / cs.LG).
 
+Paper Link - https://arxiv.org/abs/2508.16700
+
 ## Contributions
 - (i) Deployment-centric survey of `gpt-oss-20b` vs 20–40B open-weights
 - (ii) Latency/throughput metrics: TTFT, TPOT, p50/p95/p99 under vLLM and Transformers
